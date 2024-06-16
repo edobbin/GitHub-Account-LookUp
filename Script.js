@@ -23,8 +23,8 @@ async function getGHAccount(username){
 getGHAccount("edobbin").then(info => console.log(info.pic));
 
 var pfp = document.getElementById("Profile-Picture");
-var textBox = document.getElementById("username");
-var button = document.getElementById("sub");
+var textBox = document.getElementById("inpt");
+var button = document.getElementById("butt");
 var usernam = document.getElementById("user");
 
 button.addEventListener('click', () =>{
@@ -36,7 +36,7 @@ button.addEventListener('click', () =>{
     
 
     
-    //console.log("click");
+    console.log("click");
 });
 
 

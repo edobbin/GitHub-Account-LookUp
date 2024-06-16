@@ -14,29 +14,59 @@ body{
 
 }
 
+.inpt{
+    outline: auto;
+    width: auto;
+    outline: none;
+}
+.butt{
+    outline: auto;
+}
 .input-field{
     margin: auto;
+    display: flex;
+    
 }
 .Profile-card{
     background-color: rgb(192, 192, 192);
     display: flex;
     margin: auto;
-    width: 600px;
+    max-width: 600px;
     padding-left: 20px;
     padding-right: 20px;
+    justify-content: center;
+    align-items: center;
     padding: 5px;
     border-radius: 15px;
     position: relative;
     
+    
+}
+.PC-Row{
+    display: flex;
+    
+    flex-direction: row;
 }
 .Profile-Picture{
     width: 200px;
     height: auto;
     border-radius: 50%;
     float: left;
+    object-fit: cover;
     border: 1px solid black;
+    margin: 10px;
+    
     
 
+}
+.Profile-Content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    width: 400px;
+    
 }
 .username{
 
