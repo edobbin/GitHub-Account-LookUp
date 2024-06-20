@@ -39,13 +39,20 @@ body{
     padding: 5px;
     border-radius: 15px;
     position: relative;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.103);
+    visibility: hidden;
     
     
 }
+.pfc{
+    visibility: hidden;
+}
 .PC-Row{
     display: flex;
-    
     flex-direction: row;
+}
+.PC-Row p{
+   margin: 20px; 
 }
 .Profile-Picture{
     width: 200px;
