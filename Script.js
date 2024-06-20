@@ -11,10 +11,14 @@ var pfp = document.getElementById("Profile-Picture");
 var textBox = document.getElementById("inpt");
 var button = document.getElementById("butt");
 var usernam = document.getElementById("user");
+var ghAt = document.getElementById("gh");
 
 var follow = document.getElementById("followers");
 var following = document.getElementById("following");
-var repo = document.getElementById("repo")
+var repo = document.getElementById("repo");
+var repo_list = document.getElementById("repositories");
+
+var repoURl;
 
 async function getGHAccount(username){
     const url = `https://api.github.com/users/${username}`;
@@ -34,11 +38,23 @@ async function getGHAccount(username){
         pic: data.avatar_url,
         follow: data.followers,
         following: data.following,
-        repo: data.public_repos
+        repo: data.public_repos,
+        url: data.html_url,
+        repo_url: data.repos_url
+
     };  
     
 }
 
+}
+
+async function getRepos(){
+const response =await fetch(repoURl);
+if(!response.ok){
+    
+}else{
+
+}
 }
 
 //getGHAccount("edobbin").then(info => console.log(info.pic));
@@ -48,13 +64,18 @@ async function getGHAccount(username){
 button.addEventListener('click', () =>{
     const inputname = textBox.value;
     getGHAccount(inputname).then(
-        info => {pfp.src =info.pic; usernam.innerHTML = info.name; follow.innerHTML = `Followers: ${info.follow}`; following.innerHTML = `Following: ${info.following}`; repo.innerHTML = `Repo: ${info.repo}`}
-    )
-
-    
-
+        info => {pfp.src =info.pic; 
+            usernam.innerHTML = info.name; 
+            ghAt.innerHTML =`<a href= "${info.url}"> @${info.user}</a>`;
+            follow.innerHTML = `Followers: ${info.follow}`; 
+            following.innerHTML = `Following: ${info.following}`; 
+            repo.innerHTML = `Repo: ${info.repo}`;
+            repoURl = info.repo_url
+        }
+    )    
     card.style.visibility = 'visible';
     console.log("click");
+    
 });
 
 

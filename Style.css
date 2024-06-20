@@ -2,6 +2,7 @@
     
     margin: 0;
     justify-content: center;
+    display: flexbox;
 }
 header{
     text-align: center;
@@ -77,4 +78,19 @@ body{
 }
 .username{
 
+}
+
+.repoWrap{
+    display: flexbox;
+    margin: auto;
+    max-width: 600px;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.103);
+    visibility: visible;
 }
