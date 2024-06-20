@@ -41,14 +41,14 @@ async function getGHAccount(username){
 
 }
 
-getGHAccount("edobbin").then(info => console.log(info.pic));
+//getGHAccount("edobbin").then(info => console.log(info.pic));
 
 
 
 button.addEventListener('click', () =>{
     const inputname = textBox.value;
     getGHAccount(inputname).then(
-        info => {pfp.src =info.pic; usernam.innerHTML = info.name; follow.innerText = `${follow.innerText} ${info.follow}`; following.innerText = `${following.innerText} ${info.following}`; repo.innerText = `${repo.innerText} ${info.repo}`}
+        info => {pfp.src =info.pic; usernam.innerHTML = info.name; follow.innerHTML = `Followers: ${info.follow}`; following.innerHTML = `Following: ${info.following}`; repo.innerHTML = `Repo: ${info.repo}`}
     )
 
     
