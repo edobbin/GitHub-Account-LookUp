@@ -42,13 +42,14 @@ async function getGHAccount(username) {
 }
 
 async function getRepos(username) {
-  var repoURl = `https://api.github.com/users/${username}/repos`;
+  var repoURl = `https://api.github.com/users/${username}/repos?sort=updated`;
   const response = await fetch(repoURl);
   if (!response.ok) {
     console.log("fail");
     return;
   } else {
     const data = await response.json();
+    
     if (data.length == 0) {
       return;
     } else {
